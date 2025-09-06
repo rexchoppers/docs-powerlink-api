@@ -1,0 +1,30 @@
+{
+  "name": "PmaxService/getEepromVersion",
+  "summary": "Get EEPROM version",
+  "description": "Returns the EEPROM version of the panel.",
+  "params": [],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "eeprom_model": { "type": "integer" },
+        "eeprom_sub_model": { "type": "integer" }
+      },
+      "required": ["eeprom_model", "eeprom_sub_model"]
+    }
+  },
+  "examples": [
+    {
+      "name": "getEepromVersion Example",
+      "params": [],
+      "result": {
+        "name": "version",
+        "value": {
+          "eeprom_model": 7,
+          "eeprom_sub_model": 174
+        }
+      }
+    }
+  ]
+}

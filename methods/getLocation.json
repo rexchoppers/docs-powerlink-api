@@ -1,0 +1,38 @@
+{
+  "name": "PmaxService/getLocation",
+  "summary": "Get a location by ID",
+  "description": "Returns information for a zone location.",
+  "params": [
+    {
+      "name": "locationId",
+      "description": "Location ID",
+      "schema": { "type": "integer" }
+    }
+  ],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer" },
+        "value": { "type": "string" }
+      },
+      "required": ["id", "value"]
+    }
+  },
+  "examples": [
+    {
+      "name": "getLocation Example",
+      "params": [
+        { "name": "locationId", "value": 1 }
+      ],
+      "result": {
+        "name": "location",
+        "value": {
+          "id": 1,
+          "value": "Loft"
+        }
+      }
+    }
+  ]
+}
