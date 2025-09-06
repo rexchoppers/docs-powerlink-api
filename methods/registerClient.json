@@ -1,0 +1,44 @@
+{
+  "name": "PmaxService/RegisterClient",
+  "summary": "Register a client",
+  "description": "Registers a client by IP address. Only one client can be active at a time.",
+  "params": [
+    {
+      "name": "clientIp",
+      "description": "IP address of the client",
+      "schema": { "type": "string", "format": "ipv4" }
+    },
+    {
+      "name": "code",
+      "description": "Possibly the master/user/installer code",
+      "schema": { "type": "integer" }
+    },
+    {
+      "name": "?",
+      "description": "Unknown - \"user\" seems to work",
+      "schema": { "type": "string" }
+    }
+  ],
+  "result": {
+    "name": "status",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "status": { "type": "string", "enum": ["success"] }
+      }
+    }
+  },
+  "examples": [
+    {
+      "name": "RegisterClient Example",
+      "params": [
+        { "name": "clientIp", "value": "192.168.1.1" },
+        { "name": "code", "value": 1234 },
+        { "name": "clientName", "value": "user" }
+      ],
+      "result": {
+        "status": "success"
+      }
+    }
+  ]
+}
