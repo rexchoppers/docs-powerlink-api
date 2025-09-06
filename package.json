@@ -1,0 +1,14 @@
+{
+  "name": "docs-powerlink-api",
+  "version": "1.0.0",
+  "main": "generate.js",
+  "scripts": {
+    "dev": "nodemon --watch info.json --watch methods/ --ext json generate.js"
+  },
+  "author": "Rexchoppers",
+  "license": "MIT",
+  "description": "Documentation for the Visonic PowerLink JSON-RPC API",
+  "dependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
