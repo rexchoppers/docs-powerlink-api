@@ -1,0 +1,733 @@
+[
+  {
+    "method": "PmaxService/createAlarm",
+    "params": [
+      "somestring",
+      "somestring",
+      1
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/createSystemLog",
+    "params": [
+      "somestring",
+      "somestring"
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/deleteDevice",
+    "params": [
+      "somestring",
+      1,
+      1
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/enableSsh",
+    "params": [
+      "somestring",
+      true
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/enrollDevice",
+    "params": [
+      "somestring",
+      "somestring",
+      1
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/getApiVersion",
+    "params": null,
+    "returns": "somestring"
+  },
+  {
+    "method": "PmaxService/getBatteryLevel",
+    "params": null,
+    "returns": 1
+  },
+  {
+    "method": "PmaxService/getConnectionType",
+    "params": null,
+    "returns": "somestring"
+  },
+  {
+    "method": "PmaxService/getDate",
+    "params": null,
+    "returns": "somestring"
+  },
+  {
+    "method": "PmaxService/getDateTime",
+    "params": null,
+    "returns": "somestring"
+  },
+  {
+    "method": "PmaxService/getDeviceConfig",
+    "params": [
+      1,
+      1
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/getDeviceStatuses",
+    "params": [
+      1,
+      1
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/getDevicesConfig",
+    "params": null,
+    "returns": []
+  },
+  {
+    "method": "PmaxService/getEepromItem",
+    "params": [
+      1,
+      1,
+      1
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/getEepromVersion",
+    "params": null,
+    "returns": []
+  },
+  {
+    "method": "PmaxService/getGsmLevel",
+    "params": null,
+    "returns": 1
+  },
+  {
+    "method": "PmaxService/getInstallerCode",
+    "params": [
+      "somestring",
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/getLocation",
+    "params": [
+      1
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/getLocationInfo",
+    "params": null,
+    "returns": []
+  },
+  {
+    "method": "PmaxService/getLocationsList",
+    "params": null,
+    "returns": []
+  },
+  {
+    "method": "PmaxService/getLogHistory",
+    "params": [
+      "somestring",
+      "somestring"
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/getMaxDevice",
+    "params": [
+      1
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/getMaxDevices",
+    "params": null,
+    "returns": []
+  },
+  {
+    "method": "PmaxService/getPanelConfig",
+    "params": null,
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/getPanelState",
+    "params": [
+      1
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/getPanelStatuses",
+    "params": null,
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/getPowerGDeviceProperty",
+    "params": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/getServiceLed",
+    "params": null,
+    "returns": true
+  },
+  {
+    "method": "PmaxService/getTagsInfo",
+    "params": null,
+    "returns": []
+  },
+  {
+    "method": "PmaxService/getTime",
+    "params": null,
+    "returns": "somestring"
+  },
+  {
+    "method": "PmaxService/getUserCode",
+    "params": [
+      "somestring",
+      1
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/getUserCodes",
+    "params": [
+      "somestring"
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/getWlanClientConfig",
+    "params": [
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/getWlanConfig",
+    "params": [
+      "somestring"
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/getWlanLevel",
+    "params": null,
+    "returns": 1
+  },
+  {
+    "method": "PmaxService/getWlanScanResults",
+    "params": null,
+    "returns": []
+  },
+  {
+    "method": "PmaxService/getWlanapConfig",
+    "params": [
+      "somestring"
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/getZoneDeviceTemperature",
+    "params": [
+      1
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/isPanelConnected",
+    "params": null,
+    "returns": true
+  },
+  {
+    "method": "PmaxService/isWPSEnabled",
+    "params": null,
+    "returns": true
+  },
+  {
+    "method": "PmaxService/pmaxDownload",
+    "params": [
+      1,
+      "somestring",
+      1
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/pmaxLogin",
+    "params": [
+      "somestring"
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/pmaxLogout",
+    "params": null,
+    "returns": []
+  },
+  {
+    "method": "PmaxService/pmaxUpload",
+    "params": [
+      1,
+      1,
+      1
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/rebootGateway",
+    "params": [
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/rebootHanController",
+    "params": [
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/recallBypass",
+    "params": [
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/registerClient",
+    "params": [
+      "somestring",
+      1,
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/resetConnection",
+    "params": [
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/resetModem",
+    "params": [
+      "somestring"
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/setDate",
+    "params": [
+      "somestring",
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setDateTime",
+    "params": [
+      "somestring",
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setDebugMode",
+    "params": [
+      "somestring",
+      true
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setDeviceLed",
+    "params": [
+      "somestring",
+      1,
+      1,
+      1
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/setDevicePartitions",
+    "params": [
+      "somestring",
+      1,
+      1,
+      []
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setDevicesFastNotification",
+    "params": [
+      "somestring"
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/setEepromItem",
+    "params": [
+      "somestring",
+      1,
+      1,
+      "somestring",
+      1
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/setEnrollState",
+    "params": [
+      "somestring",
+      "somestring",
+      true
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setInstallerCode",
+    "params": [
+      "somestring",
+      "somestring",
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setLocation",
+    "params": [
+      "somestring",
+      1,
+      "somestring"
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/setLogMode",
+    "params": [
+      "somestring",
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setPanelConfig",
+    "params": [
+      "somestring",
+      {
+        "objectkey": "objectvalue"
+      }
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setPanelState",
+    "params": [
+      "somestring",
+      "somestring",
+      1,
+      true,
+      true
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setPgmState",
+    "params": [
+      "somestring",
+      1,
+      true,
+      1
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/setPowerGDeviceProperty",
+    "params": [
+      "somestring",
+      1,
+      1,
+      1,
+      "somestring",
+      1
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/setServiceLed",
+    "params": [
+      "somestring",
+      true
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/setSirenState",
+    "params": [
+      "somestring",
+      1,
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setTime",
+    "params": [
+      "somestring",
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setUserCode",
+    "params": [
+      "somestring",
+      1,
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setUserCodePartitions",
+    "params": [
+      "somestring",
+      1,
+      "somestring",
+      1
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setWPSMode",
+    "params": [
+      "somestring",
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setWlanClientConfig",
+    "params": [
+      "somestring",
+      "somestring",
+      "somestring",
+      true
+    ],
+    "returns": []
+  },
+  {
+    "method": "PmaxService/setWlanConfig",
+    "params": [
+      "somestring",
+      "somestring",
+      "somestring",
+      "somestring",
+      "somestring",
+      "somestring",
+      "somestring",
+      "somestring",
+      "somestring",
+      true,
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setWlanapConfig",
+    "params": [
+      "somestring",
+      "somestring",
+      "somestring",
+      "somestring",
+      true,
+      "somestring",
+      true
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setWlanapConfigExt",
+    "params": [
+      "somestring",
+      "somestring",
+      "somestring",
+      "somestring",
+      true,
+      true,
+      1
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setZoneDeviceBypass",
+    "params": [
+      "somestring",
+      1,
+      true
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setZoneType",
+    "params": [
+      "somestring",
+      1,
+      1
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/setZwaveModeRsp",
+    "params": [
+      "somestring",
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/skipArmExitDelay",
+    "params": [
+      "somestring",
+      1
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/startPeriodicTests",
+    "params": [
+      "somestring",
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/startViewOnDemand",
+    "params": [
+      "somestring",
+      1,
+      1
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/startedFirmwareUpgrade",
+    "params": [
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/stopPeriodicTests",
+    "params": [
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  },
+  {
+    "method": "PmaxService/updateRAM",
+    "params": [
+      "somestring"
+    ],
+    "returns": {
+      "objectkey": "objectvalue"
+    }
+  }
+]
