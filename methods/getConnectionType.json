@@ -1,0 +1,23 @@
+{
+  "name": "PmaxService/getConnectionType",
+  "summary": "Get connection type",
+  "description": "Returns how the module is connected.",
+  "params": [],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "string",
+      "description": "Connection type of the module (e.g., ETHERNET, WIFI, CELLULAR)"
+    }
+  },
+  "examples": [
+    {
+      "name": "getConnectionType Example",
+      "params": [],
+      "result": {
+        "name": "type",
+        "value": "ETHERNET"
+      }
+    }
+  ]
+}

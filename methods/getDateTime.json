@@ -1,0 +1,24 @@
+{
+  "name": "PmaxService/getDateTime",
+  "summary": "Get current date and time",
+  "description": "Returns the panel's current date and time.",
+  "params": [],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "string",
+      "description": "The current date and time in the format YYYYMMDDHHMMSS.",
+      "pattern": "^\\d{14}$"
+    }
+  },
+  "examples": [
+    {
+      "name": "getDateTime Example",
+      "params": [],
+      "result": {
+        "name": "dateTime",
+        "value": "20231107224814"
+      }
+    }
+  ]
+}

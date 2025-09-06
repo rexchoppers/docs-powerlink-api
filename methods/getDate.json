@@ -1,0 +1,24 @@
+{
+  "name": "PmaxService/getDate",
+  "summary": "Get current date",
+  "description": "Returns the panel's current date.",
+  "params": [],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "string",
+      "description": "The current date in the format YYYYMMDD.",
+      "pattern": "^\\d{8}$"
+    }
+  },
+  "examples": [
+    {
+      "name": "getDate Example",
+      "params": [],
+      "result": {
+        "name": "date",
+        "value": "20231107"
+      }
+    }
+  ]
+}
