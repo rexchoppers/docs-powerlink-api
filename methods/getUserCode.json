@@ -1,0 +1,46 @@
+{
+  "name": "PmaxService/getUserCode",
+  "summary": "Get codes for a specific user",
+  "description": "Returns all the user codes for a particular user.",
+  "params": [
+    {
+      "name": "code",
+      "description": "Your user code you use to arm + disarm the panel",
+      "schema": { "type": "string" }
+    },
+    {
+      "name": "userId",
+      "description": "The user ID you want to get the codes for",
+      "schema": { "type": "integer" }
+    }
+  ],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "partitions": { "type": "array", "items": { "type": "integer" } },
+        "userCode": { "type": "string" },
+        "userId": { "type": "integer" }
+      },
+      "required": ["partitions", "userCode", "userId"]
+    }
+  },
+  "examples": [
+    {
+      "name": "getUserCode Example",
+      "params": [
+        { "name": "code", "value": "1234" },
+        { "name": "userId", "value": 1 }
+      ],
+      "result": {
+        "name": "userCodeInfo",
+        "value": {
+          "partitions": [1,2,3],
+          "userCode": "1234",
+          "userId": 1
+        }
+      }
+    }
+  ]
+}

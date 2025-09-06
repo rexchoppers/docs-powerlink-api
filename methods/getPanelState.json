@@ -1,0 +1,38 @@
+{
+  "name": "PmaxService/getPanelState",
+  "summary": "Get panel state for a partition",
+  "description": "Returns information on the panel's state for a particular partition.",
+  "params": [
+    {
+      "name": "partitionId",
+      "description": "Partition ID",
+      "schema": { "type": "integer" }
+    }
+  ],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "partition": { "type": "integer" },
+        "state": { "type": "string" }
+      },
+      "required": ["partition", "state"]
+    }
+  },
+  "examples": [
+    {
+      "name": "getPanelState Example",
+      "params": [
+        { "name": "partitionId", "value": 1 }
+      ],
+      "result": {
+        "name": "panelState",
+        "value": {
+          "partition": 1,
+          "state": "DISARM"
+        }
+      }
+    }
+  ]
+}

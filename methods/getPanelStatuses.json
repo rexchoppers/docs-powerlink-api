@@ -1,0 +1,101 @@
+{
+  "name": "PmaxService/getPanelStatuses",
+  "summary": "Get panel statuses and partitions",
+  "description": "Returns information on partitions and the panel's current status.",
+  "params": [],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "datetime": { "type": "string", "description": "YYYYMMDDHHMMSS", "pattern": "^\\d{14}$" },
+        "partitions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "partition": { "type": "integer" },
+              "state": { "type": "string" },
+              "statuses": {
+                "type": "object",
+                "properties": {
+                  "activeBit": { "type": "boolean" },
+                  "alertBit": { "type": "boolean" },
+                  "bypassBit": { "type": "boolean" },
+                  "fireBit": { "type": "boolean" },
+                  "instantBit": { "type": "boolean" },
+                  "latchkeyBit": { "type": "boolean" },
+                  "memoryBit": { "type": "boolean" },
+                  "needEngResetBit": { "type": "boolean" },
+                  "readyBit": { "type": "boolean" },
+                  "troubleBit": { "type": "boolean" }
+                },
+                "required": ["activeBit","alertBit","bypassBit","fireBit","instantBit","latchkeyBit","memoryBit","needEngResetBit","readyBit","troubleBit"]
+              }
+            },
+            "required": ["partition","state","statuses"]
+          }
+        },
+        "statuses": {
+          "type": "object",
+          "properties": {
+            "acTrouble": { "type": "boolean" },
+            "communicationFailure": { "type": "boolean" },
+            "enrollingModeBit": { "type": "boolean" },
+            "fuseTrouble": { "type": "boolean" },
+            "jammingTrouble": { "type": "boolean" },
+            "lineFailure": { "type": "boolean" },
+            "lowBattery": { "type": "boolean" },
+            "noActive": { "type": "boolean" },
+            "tamperMemory": { "type": "boolean" },
+            "tamperTrouble": { "type": "boolean" }
+          },
+          "required": ["acTrouble","communicationFailure","enrollingModeBit","fuseTrouble","jammingTrouble","lineFailure","lowBattery","noActive","tamperMemory","tamperTrouble"]
+        }
+      },
+      "required": ["datetime","partitions","statuses"]
+    }
+  },
+  "examples": [
+    {
+      "name": "getPanelStatuses Example",
+      "params": [],
+      "result": {
+        "name": "panelStatuses",
+        "value": {
+          "datetime": "20231107225917",
+          "partitions": [
+            {
+              "partition": 1,
+              "state": "DISARM",
+              "statuses": {
+                "activeBit": true,
+                "alertBit": false,
+                "bypassBit": false,
+                "fireBit": false,
+                "instantBit": false,
+                "latchkeyBit": false,
+                "memoryBit": false,
+                "needEngResetBit": false,
+                "readyBit": true,
+                "troubleBit": false
+              }
+            }
+          ],
+          "statuses": {
+            "acTrouble": false,
+            "communicationFailure": false,
+            "enrollingModeBit": false,
+            "fuseTrouble": false,
+            "jammingTrouble": false,
+            "lineFailure": false,
+            "lowBattery": false,
+            "noActive": false,
+            "tamperMemory": false,
+            "tamperTrouble": false
+          }
+        }
+      }
+    }
+  ]
+}

@@ -85,13 +85,6 @@
     }
   },
   {
-    "method": "PmaxService/getPanelStatuses",
-    "params": null,
-    "returns": {
-      "objectkey": "objectvalue"
-    }
-  },
-  {
     "method": "PmaxService/getPowerGDeviceProperty",
     "params": [
       1,
@@ -115,23 +108,6 @@
     "method": "PmaxService/getTime",
     "params": null,
     "returns": "somestring"
-  },
-  {
-    "method": "PmaxService/getUserCode",
-    "params": [
-      "somestring",
-      1
-    ],
-    "returns": {
-      "objectkey": "objectvalue"
-    }
-  },
-  {
-    "method": "PmaxService/getUserCodes",
-    "params": [
-      "somestring"
-    ],
-    "returns": []
   },
   {
     "method": "PmaxService/getWlanClientConfig",
