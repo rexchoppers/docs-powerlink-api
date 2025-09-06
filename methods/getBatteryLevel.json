@@ -1,0 +1,25 @@
+{
+  "name": "PmaxService/getBatteryLevel",
+  "summary": "Get battery level",
+  "description": "Returns the battery level of the panel.",
+  "params": [],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "integer",
+      "description": "The battery level of the panel in percent.",
+      "minimum": 0,
+      "maximum": 100
+    }
+  },
+  "examples": [
+    {
+      "name": "getBatteryLevel Example",
+      "params": [],
+      "result": {
+        "name": "level",
+        "value": 100
+      }
+    }
+  ]
+}
