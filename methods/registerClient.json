@@ -34,7 +34,7 @@
       "params": [
         { "name": "clientIp", "value": "192.168.1.1" },
         { "name": "code", "value": 1234 },
-        { "name": "clientName", "value": "user" }
+        { "name": "?", "value": "user" }
       ],
       "result": {
         "status": "success"

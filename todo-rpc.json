@@ -335,17 +335,6 @@
     }
   },
   {
-    "method": "PmaxService/registerClient",
-    "params": [
-      "somestring",
-      1,
-      "somestring"
-    ],
-    "returns": {
-      "objectkey": "objectvalue"
-    }
-  },
-  {
     "method": "PmaxService/resetConnection",
     "params": [
       "somestring"
