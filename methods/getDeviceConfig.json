@@ -1,0 +1,57 @@
+{
+  "name": "PmaxService/getDeviceConfig",
+  "summary": "Get device configuration",
+  "description": "Returns all configuration information for a device.",
+  "params": [
+    {
+      "name": "typeId",
+      "description": "PowerG Device type ID",
+      "schema": { "type": "integer" }
+    },
+    {
+      "name": "deviceId",
+      "description": "Device ID",
+      "schema": { "type": "integer" }
+    }
+  ],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer" },
+        "location": { "type": "string" },
+        "partitions": {
+          "type": "array",
+          "items": { "type": "integer" }
+        },
+        "serial": { "type": "string" },
+        "subtype": { "type": "integer" },
+        "type": { "type": "integer" },
+        "zoneSecurityType": { "type": "integer" }
+      },
+      "required": ["id", "partitions", "serial", "subtype", "type"]
+    }
+  },
+  "examples": [
+    {
+      "name": "getDeviceConfig Example",
+      "params": [
+        { "name": "typeId", "value": 3 },
+        { "name": "deviceId", "value": 3 }
+      ],
+      "result": {
+        "name": "device",
+        "value": {
+          "id": 3,
+          "location": "Utility room",
+          "partitions": [1],
+          "serial": "000-0001",
+          "subtype": 12,
+          "type": 3,
+          "zoneSecurityType": 4
+        }
+      }
+    }
+  ]
+}

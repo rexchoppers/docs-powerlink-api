@@ -1,0 +1,94 @@
+{
+  "name": "PmaxService/getDeviceStatuses",
+  "summary": "Get device statuses",
+  "description": "Returns all status information for a device.",
+  "params": [
+    {
+      "name": "typeId",
+      "description": "PowerG Device type ID",
+      "schema": { "type": "integer" }
+    },
+    {
+      "name": "deviceId",
+      "description": "Device ID",
+      "schema": { "type": "integer" }
+    }
+  ],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer" },
+        "type": { "type": "integer" },
+        "statuses": {
+          "type": "object",
+          "properties": {
+            "acTrouble": { "type": "boolean" },
+            "alarm": { "type": "boolean" },
+            "bypassZone": { "type": "boolean" },
+            "cleanMeTrouble": { "type": "boolean" },
+            "coldAlert": { "type": "boolean" },
+            "freezerAlert": { "type": "boolean" },
+            "freezingAlert": { "type": "boolean" },
+            "heatAlarmTrouble": { "type": "boolean" },
+            "hotAlert": { "type": "boolean" },
+            "lowBattery": { "type": "boolean" },
+            "maskingTrouble": { "type": "boolean" },
+            "notUpdated": { "type": "boolean" },
+            "oneWayTrouble": { "type": "boolean" },
+            "open": { "type": "boolean" },
+            "smokeAlarm": { "type": "boolean" },
+            "smokeTrouble": { "type": "boolean" },
+            "supervisionTrouble": { "type": "boolean" },
+            "tamperMemory": { "type": "boolean" },
+            "tamperTrouble": { "type": "boolean" },
+            "zoneTrouble": { "type": "boolean" }
+          },
+          "required": [
+            "acTrouble","alarm","bypassZone","cleanMeTrouble","coldAlert","freezerAlert","freezingAlert","heatAlarmTrouble","hotAlert","lowBattery","maskingTrouble","notUpdated","oneWayTrouble","open","smokeAlarm","smokeTrouble","supervisionTrouble","tamperMemory","tamperTrouble","zoneTrouble"
+          ]
+        }
+      },
+      "required": ["id", "type", "statuses"]
+    }
+  },
+  "examples": [
+    {
+      "name": "getDeviceStatuses Example",
+      "params": [
+        { "name": "typeId", "value": 3 },
+        { "name": "deviceId", "value": 3 }
+      ],
+      "result": {
+        "name": "status",
+        "value": {
+          "id": 3,
+          "statuses": {
+            "acTrouble": false,
+            "alarm": false,
+            "bypassZone": false,
+            "cleanMeTrouble": false,
+            "coldAlert": false,
+            "freezerAlert": false,
+            "freezingAlert": false,
+            "heatAlarmTrouble": false,
+            "hotAlert": false,
+            "lowBattery": false,
+            "maskingTrouble": false,
+            "notUpdated": false,
+            "oneWayTrouble": false,
+            "open": false,
+            "smokeAlarm": false,
+            "smokeTrouble": false,
+            "supervisionTrouble": false,
+            "tamperMemory": false,
+            "tamperTrouble": false,
+            "zoneTrouble": false
+          },
+          "type": 3
+        }
+      }
+    }
+  ]
+}

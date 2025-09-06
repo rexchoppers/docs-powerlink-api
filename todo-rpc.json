@@ -39,51 +39,6 @@
     }
   },
   {
-    "method": "PmaxService/getBatteryLevel",
-    "params": null,
-    "returns": 1
-  },
-  {
-    "method": "PmaxService/getConnectionType",
-    "params": null,
-    "returns": "somestring"
-  },
-  {
-    "method": "PmaxService/getDate",
-    "params": null,
-    "returns": "somestring"
-  },
-  {
-    "method": "PmaxService/getDateTime",
-    "params": null,
-    "returns": "somestring"
-  },
-  {
-    "method": "PmaxService/getDeviceConfig",
-    "params": [
-      1,
-      1
-    ],
-    "returns": {
-      "objectkey": "objectvalue"
-    }
-  },
-  {
-    "method": "PmaxService/getDeviceStatuses",
-    "params": [
-      1,
-      1
-    ],
-    "returns": {
-      "objectkey": "objectvalue"
-    }
-  },
-  {
-    "method": "PmaxService/getDevicesConfig",
-    "params": null,
-    "returns": []
-  },
-  {
     "method": "PmaxService/getEepromItem",
     "params": [
       1,

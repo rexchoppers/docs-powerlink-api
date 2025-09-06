@@ -1,0 +1,43 @@
+{
+  "name": "PmaxService/getDevicesConfig",
+  "summary": "Get all device configurations",
+  "description": "Returns all device information for the panel. This includes all sensors, keyfobs, etc.",
+  "params": [],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "location": { "type": "string" },
+          "partitions": { "type": "array", "items": { "type": "integer" } },
+          "serial": { "type": "string" },
+          "subtype": { "type": "integer" },
+          "type": { "type": "integer" },
+          "zoneSecurityType": { "type": "integer" }
+        },
+        "required": ["id", "partitions", "serial", "subtype", "type"]
+      }
+    }
+  },
+  "examples": [
+    {
+      "name": "getDevicesConfig Example",
+      "params": [],
+      "result": {
+        "name": "devices",
+        "value": [
+          { "id": 1, "partitions": [1], "serial": "410-0000", "subtype": 1, "type": 2 },
+          { "id": 1, "location": "Front door", "partitions": [1], "serial": "109-0000", "subtype": 44, "type": 3, "zoneSecurityType": 5 },
+          { "id": 2, "location": "Kitchen", "partitions": [1], "serial": "126-0000", "subtype": 12, "type": 3, "zoneSecurityType": 6 },
+          { "id": 3, "location": "Utility room", "partitions": [1], "serial": "126-0000", "subtype": 12, "type": 3, "zoneSecurityType": 4 },
+          { "id": 4, "location": "Living room", "partitions": [1], "serial": "126-0000", "subtype": 12, "type": 3, "zoneSecurityType": 6 },
+          { "id": 1, "partitions": [1], "serial": "301-0000", "subtype": 2, "type": 5 },
+          { "id": 2, "partitions": [1], "serial": "301-0000", "subtype": 2, "type": 5 }
+        ]
+      }
+    }
+  ]
+}
