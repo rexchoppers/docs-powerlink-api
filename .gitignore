@@ -1,3 +1,4 @@
 .idea
 node_modules
 complete.yaml
+openrpc.build.json
