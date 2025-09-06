@@ -1,0 +1,40 @@
+{
+  "name": "PmaxService/enableSsh",
+  "summary": "Enable or disable SSH access",
+  "description": "This method enables SSH access to the module.",
+  "params": [
+    {
+      "name": "code",
+      "description": "Your user/installer code",
+      "schema": { "type": "string" }
+    },
+    {
+      "name": "enable",
+      "description": "Enable SSH access",
+      "schema": { "type": "boolean" }
+    }
+  ],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "status": { "type": "string", "enum": ["success"] }
+      },
+      "required": ["status"]
+    }
+  },
+  "examples": [
+    {
+      "name": "EnableSsh Example",
+      "params": [
+        { "name": "code", "value": "1234" },
+        { "name": "enable", "value": true }
+      ],
+      "result": {
+        "name": "status",
+        "value": { "status": "success" }
+      }
+    }
+  ]
+}
