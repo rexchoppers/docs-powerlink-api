@@ -1,0 +1,40 @@
+{
+  "name": "PmaxService/setDebugMode",
+  "summary": "Set debug mode",
+  "description": "Enables or disables the debug mode of the panel. Note: This is not supported on some panels.",
+  "params": [
+    {
+      "name": "installerCode",
+      "description": "Your installer code",
+      "schema": { "type": "integer" }
+    },
+    {
+      "name": "enable",
+      "description": "Debug mode true/false",
+      "schema": { "type": "boolean" }
+    }
+  ],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "status": { "type": "string", "enum": ["success"] }
+      },
+      "required": ["status"]
+    }
+  },
+  "examples": [
+    {
+      "name": "setDebugMode Example",
+      "params": [
+        { "name": "installerCode", "value": 1234 },
+        { "name": "enable", "value": true }
+      ],
+      "result": {
+        "name": "status",
+        "value": { "status": "success" }
+      }
+    }
+  ]
+}

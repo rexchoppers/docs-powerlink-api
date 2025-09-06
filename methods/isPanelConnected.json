@@ -1,0 +1,20 @@
+{
+  "name": "PmaxService/isPanelConnected",
+  "summary": "Is panel connected",
+  "description": "Returns the panel's current connection status.",
+  "params": [],
+  "result": {
+    "name": "result",
+    "schema": { "type": "boolean", "description": "True if the panel is currently connected" }
+  },
+  "examples": [
+    {
+      "name": "isPanelConnected Example",
+      "params": [],
+      "result": {
+        "name": "connected",
+        "value": true
+      }
+    }
+  ]
+}

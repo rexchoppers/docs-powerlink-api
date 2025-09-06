@@ -1,0 +1,58 @@
+{
+  "name": "PmaxService/setPanelState",
+  "summary": "Set panel state",
+  "description": "Sets the state of the panel. For example, to arm/disarm your panel, use this method.",
+  "params": [
+    {
+      "name": "code",
+      "description": "Your user code you use to arm + disarm the panel",
+      "schema": { "type": "integer" }
+    },
+    {
+      "name": "state",
+      "description": "The state you want to set your panel",
+      "schema": { "type": "string", "enum": ["AWAY", "HOME", "DISARM"] }
+    },
+    {
+      "name": "partition",
+      "description": "The partition you want to set the state of (Requires clarification)",
+      "schema": { "type": "integer" }
+    },
+    {
+      "name": "unknown1",
+      "description": "Unknown (Requires clarification)",
+      "schema": { "type": "boolean" }
+    },
+    {
+      "name": "unknown2",
+      "description": "Unknown (Requires clarification)",
+      "schema": { "type": "boolean" }
+    }
+  ],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "status": { "type": "string", "enum": ["success"] }
+      },
+      "required": ["status"]
+    }
+  },
+  "examples": [
+    {
+      "name": "setPanelState Example",
+      "params": [
+        { "name": "code", "value": 1234 },
+        { "name": "state", "value": "HOME" },
+        { "name": "partition", "value": 1 },
+        { "name": "unknown1", "value": true },
+        { "name": "unknown2", "value": true }
+      ],
+      "result": {
+        "name": "status",
+        "value": { "status": "success" }
+      }
+    }
+  ]
+}

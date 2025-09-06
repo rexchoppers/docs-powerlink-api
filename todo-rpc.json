@@ -150,11 +150,6 @@
     "returns": []
   },
   {
-    "method": "PmaxService/isPanelConnected",
-    "params": null,
-    "returns": true
-  },
-  {
     "method": "PmaxService/isWPSEnabled",
     "params": null,
     "returns": true
@@ -253,16 +248,6 @@
     }
   },
   {
-    "method": "PmaxService/setDebugMode",
-    "params": [
-      "somestring",
-      true
-    ],
-    "returns": {
-      "objectkey": "objectvalue"
-    }
-  },
-  {
     "method": "PmaxService/setDeviceLed",
     "params": [
       "somestring",
@@ -350,19 +335,6 @@
       {
         "objectkey": "objectvalue"
       }
-    ],
-    "returns": {
-      "objectkey": "objectvalue"
-    }
-  },
-  {
-    "method": "PmaxService/setPanelState",
-    "params": [
-      "somestring",
-      "somestring",
-      1,
-      true,
-      true
     ],
     "returns": {
       "objectkey": "objectvalue"
