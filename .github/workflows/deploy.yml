@@ -30,6 +30,6 @@ jobs:
           git fetch origin
           git checkout -B dist
           cp build/openrpc.build.json .
-          git add openrpc.build.json
+          git add -f openrpc.build.json
           git commit -m "UPDATED OpenRPC Spec" || echo "No changes to commit"
           git push origin dist --force
