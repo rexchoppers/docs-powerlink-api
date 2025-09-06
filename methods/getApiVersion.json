@@ -1,0 +1,20 @@
+{
+  "name": "PmaxService/getApiVersion",
+  "summary": "Get API version",
+  "description": "Returns the API version of the module.",
+  "params": [],
+  "result": {
+    "name": "result",
+    "schema": { "type": "string", "description": "API version string" }
+  },
+  "examples": [
+    {
+      "name": "getApiVersion Example",
+      "params": [],
+      "result": {
+        "name": "version",
+        "value": "3.31"
+      }
+    }
+  ]
+}

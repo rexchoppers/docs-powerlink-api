@@ -39,11 +39,6 @@
     }
   },
   {
-    "method": "PmaxService/getApiVersion",
-    "params": null,
-    "returns": "somestring"
-  },
-  {
     "method": "PmaxService/getBatteryLevel",
     "params": null,
     "returns": 1
