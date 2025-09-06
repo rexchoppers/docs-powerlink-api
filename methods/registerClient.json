@@ -14,18 +14,19 @@
       "schema": { "type": "integer" }
     },
     {
-      "name": "?",
-      "description": "Unknown - \"user\" seems to work",
+      "name": "role",
+      "description": "Unknown parameter — 'user' seems to work",
       "schema": { "type": "string" }
     }
   ],
   "result": {
-    "name": "status",
+    "name": "result",
     "schema": {
       "type": "object",
       "properties": {
         "status": { "type": "string", "enum": ["success"] }
-      }
+      },
+      "required": ["status"]
     }
   },
   "examples": [
@@ -34,10 +35,13 @@
       "params": [
         { "name": "clientIp", "value": "192.168.1.1" },
         { "name": "code", "value": 1234 },
-        { "name": "?", "value": "user" }
+        { "name": "role", "value": "user" }
       ],
       "result": {
-        "status": "success"
+        "name": "status",
+        "value": {
+          "status": "success"
+        }
       }
     }
   ]
