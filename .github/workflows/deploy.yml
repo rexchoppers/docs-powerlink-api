@@ -1,0 +1,35 @@
+name: Deploy OpenRPC Spec to dist branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build OpenRPC Spec
+        run: |
+          mkdir -p build
+          node generate.js
+          cp openrpc.build.json build/openrpc.build.json
+
+      # Push the build folder to dist branch
+      - name: Commit built JSON to dist branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin
+          git checkout -B dist
+          cp build/openrpc.build.json .
+          git add openrpc.build.json
+          git commit -m "UPDATED OpenRPC Spec" || echo "No changes to commit"
+          git push origin dist --force
