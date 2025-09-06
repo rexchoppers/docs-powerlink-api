@@ -1,5 +1,5 @@
 {
   "title": "PowerLink API",
   "version": "1.0.0",
-  "description": "Documentation for the Visonic PowerLink JSON-RPC API"
+  "description": "Documentation for the Visonic PowerLink JSON-RPC API\n\nSome endpoints require the client to be registered first using the `registerClient` method. Only one client can be registered at a time.\n\nThis documentation is based on reverse engineering and may not be complete or entirely accurate. Use at your own risk."
 }
