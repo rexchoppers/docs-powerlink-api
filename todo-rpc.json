@@ -48,11 +48,6 @@
     "returns": []
   },
   {
-    "method": "PmaxService/getEepromVersion",
-    "params": null,
-    "returns": []
-  },
-  {
     "method": "PmaxService/getGsmLevel",
     "params": null,
     "returns": 1
@@ -68,19 +63,7 @@
     }
   },
   {
-    "method": "PmaxService/getLocation",
-    "params": [
-      1
-    ],
-    "returns": []
-  },
-  {
     "method": "PmaxService/getLocationInfo",
-    "params": null,
-    "returns": []
-  },
-  {
-    "method": "PmaxService/getLocationsList",
     "params": null,
     "returns": []
   },
@@ -91,25 +74,6 @@
       "somestring"
     ],
     "returns": []
-  },
-  {
-    "method": "PmaxService/getMaxDevice",
-    "params": [
-      1
-    ],
-    "returns": []
-  },
-  {
-    "method": "PmaxService/getMaxDevices",
-    "params": null,
-    "returns": []
-  },
-  {
-    "method": "PmaxService/getPanelConfig",
-    "params": null,
-    "returns": {
-      "objectkey": "objectvalue"
-    }
   },
   {
     "method": "PmaxService/getPanelState",

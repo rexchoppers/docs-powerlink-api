@@ -1,0 +1,35 @@
+{
+  "name": "PmaxService/getMaxDevice",
+  "summary": "Get max devices for a type",
+  "description": "Returns the maximum number of devices for a particular device type that can be added to the system.",
+  "params": [
+    {
+      "name": "typeId",
+      "description": "PowerG Device type ID",
+      "schema": { "type": "integer" }
+    }
+  ],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "max": { "type": "integer" },
+        "type": { "type": "integer" }
+      },
+      "required": ["max", "type"]
+    }
+  },
+  "examples": [
+    {
+      "name": "getMaxDevice Example",
+      "params": [
+        { "name": "typeId", "value": 3 }
+      ],
+      "result": {
+        "name": "maxForType",
+        "value": { "max": 30, "type": 3 }
+      }
+    }
+  ]
+}

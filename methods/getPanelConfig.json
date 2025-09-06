@@ -1,0 +1,73 @@
+{
+  "name": "PmaxService/getPanelConfig",
+  "summary": "Get panel configuration",
+  "description": "Returns all configuration information for the panel.",
+  "params": [],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "object",
+      "properties": {
+        "abortTime": { "type": "integer" },
+        "bypassArmMode": { "type": "string" },
+        "duressCode": { "type": "string" },
+        "eepromVersion": {
+          "type": "object",
+          "properties": {
+            "eeprom_model": { "type": "integer" },
+            "eeprom_sub_model": { "type": "integer" }
+          },
+          "required": ["eeprom_model", "eeprom_sub_model"]
+        },
+        "entryDelay1": { "type": "integer" },
+        "entryDelay2": { "type": "integer" },
+        "exitDelay": { "type": "integer" },
+        "gprsEnrolled": { "type": "boolean" },
+        "kidsComeHomeEnabled": { "type": "boolean" },
+        "latchkeyEnabled": { "type": "boolean" },
+        "panelId": { "type": "string" },
+        "partitionEnabled": { "type": "boolean" },
+        "plinkVariant": { "type": "string" },
+        "plinkVersion": { "type": "string" },
+        "pmaxDefaultVersion": { "type": "string" },
+        "pmaxVersion": { "type": "string" },
+        "quickArmEnabled": { "type": "boolean" },
+        "viewOnDemand": { "type": "string" },
+        "viewOnDemandTimeWindow": { "type": "string" }
+      },
+      "required": [
+        "abortTime","bypassArmMode","duressCode","eepromVersion","entryDelay1","entryDelay2","exitDelay","gprsEnrolled","kidsComeHomeEnabled","latchkeyEnabled","panelId","partitionEnabled","plinkVariant","plinkVersion","pmaxDefaultVersion","pmaxVersion","quickArmEnabled","viewOnDemand","viewOnDemandTimeWindow"
+      ]
+    }
+  },
+  "examples": [
+    {
+      "name": "getPanelConfig Example",
+      "params": [],
+      "result": {
+        "name": "panelConfig",
+        "value": {
+          "abortTime": 1,
+          "bypassArmMode": "MANUAL_BYPASS",
+          "duressCode": "0000",
+          "eepromVersion": { "eeprom_model": 7, "eeprom_sub_model": 174 },
+          "entryDelay1": 30,
+          "entryDelay2": 60,
+          "exitDelay": 30,
+          "gprsEnrolled": false,
+          "kidsComeHomeEnabled": false,
+          "latchkeyEnabled": true,
+          "panelId": "0AAA0A",
+          "partitionEnabled": false,
+          "plinkVariant": "adtuk",
+          "plinkVersion": "7.5.58",
+          "pmaxDefaultVersion": "J-703883 I20.214",
+          "pmaxVersion": "JS703642 I20.214",
+          "quickArmEnabled": false,
+          "viewOnDemand": "VIEW_IN_ALL_MODES",
+          "viewOnDemandTimeWindow": "ALWAYS"
+        }
+      }
+    }
+  ]
+}
