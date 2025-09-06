@@ -1,5 +1,5 @@
 {
-  "name": "PmaxService/RegisterClient",
+  "name": "PmaxService/registerClient",
   "summary": "Register a client",
   "description": "Registers a client by IP address. Only one client can be active at a time.",
   "params": [
@@ -31,7 +31,7 @@
   },
   "examples": [
     {
-      "name": "RegisterClient Example",
+      "name": "registerClient Example",
       "params": [
         { "name": "clientIp", "value": "192.168.1.1" },
         { "name": "code", "value": 1234 },

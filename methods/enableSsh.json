@@ -26,7 +26,7 @@
   },
   "examples": [
     {
-      "name": "EnableSsh Example",
+      "name": "enableSsh Example",
       "params": [
         { "name": "code", "value": "1234" },
         { "name": "enable", "value": true }

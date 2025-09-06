@@ -28,14 +28,6 @@
     "returns": []
   },
   {
-    "method": "PmaxService/enableSsh",
-    "params": [
-      "somestring",
-      true
-    ],
-    "returns": []
-  },
-  {
     "method": "PmaxService/enrollDevice",
     "params": [
       "somestring",
