@@ -1,0 +1,44 @@
+{
+  "name": "PmaxService/getEepromItem",
+  "summary": "Get EEPROM item",
+  "description": "Retrieves data from the panel's EEPROM. Exact semantics are based on reverse engineering and may vary by model.",
+  "params": [
+    {
+      "name": "startIndex",
+      "description": "Start index within the EEPROM to read from",
+      "schema": { "type": "integer", "minimum": 0 }
+    },
+    {
+      "name": "maxIndex",
+      "description": "Maximum index or number of items to attempt to read (panel-dependent)",
+      "schema": { "type": "integer", "minimum": 0 }
+    },
+    {
+      "name": "timeoutSeconds",
+      "description": "Timeout for the operation in seconds",
+      "schema": { "type": "integer", "minimum": 0 }
+    }
+  ],
+  "result": {
+    "name": "result",
+    "schema": {
+      "type": "array",
+      "description": "EEPROM data bytes returned by the device (may be empty if no data)",
+      "items": { "type": "integer", "minimum": 0, "maximum": 255 }
+    }
+  },
+  "examples": [
+    {
+      "name": "getEepromItem Example",
+      "params": [
+        { "name": "startIndex", "value": 1 },
+        { "name": "maxIndex", "value": 1 },
+        { "name": "timeoutSeconds", "value": 1 }
+      ],
+      "result": {
+        "name": "eepromData",
+        "value": []
+      }
+    }
+  ]
+}
