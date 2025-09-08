@@ -1,0 +1,1761 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "PowerLink API",
+    "version": "1.0.0",
+    "description": "Documentation for the Visonic PowerLink JSON-RPC API\n\nSome endpoints require the client to be registered first using the `registerClient` method. Only one client can be registered at a time.\n\nThis documentation is based on reverse engineering and may not be complete or entirely accurate. Use at your own risk."
+  },
+  "methods": [
+    {
+      "name": "PmaxService/enableSsh",
+      "summary": "Enable or disable SSH access",
+      "description": "This method enables SSH access to the module.",
+      "params": [
+        {
+          "name": "code",
+          "description": "Your user/installer code",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "enable",
+          "description": "Enable SSH access",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "success"
+              ]
+            }
+          },
+          "required": [
+            "status"
+          ]
+        }
+      },
+      "examples": [
+        {
+          "name": "enableSsh Example",
+          "params": [
+            {
+              "name": "code",
+              "value": "1234"
+            },
+            {
+              "name": "enable",
+              "value": true
+            }
+          ],
+          "result": {
+            "name": "status",
+            "value": {
+              "status": "success"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getApiVersion",
+      "summary": "Get API version",
+      "description": "Returns the API version of the module.",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "string",
+          "description": "API version string"
+        }
+      },
+      "examples": [
+        {
+          "name": "getApiVersion Example",
+          "params": [],
+          "result": {
+            "name": "version",
+            "value": "3.31"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getBatteryLevel",
+      "summary": "Get battery level",
+      "description": "Returns the battery level of the panel.",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "integer",
+          "description": "The battery level of the panel in percent.",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "examples": [
+        {
+          "name": "getBatteryLevel Example",
+          "params": [],
+          "result": {
+            "name": "level",
+            "value": 100
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getConnectionType",
+      "summary": "Get connection type",
+      "description": "Returns how the module is connected.",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "string",
+          "description": "Connection type of the module (e.g., ETHERNET, WIFI, CELLULAR)"
+        }
+      },
+      "examples": [
+        {
+          "name": "getConnectionType Example",
+          "params": [],
+          "result": {
+            "name": "type",
+            "value": "ETHERNET"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getDate",
+      "summary": "Get current date",
+      "description": "Returns the panel's current date.",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "string",
+          "description": "The current date in the format YYYYMMDD.",
+          "pattern": "^\\d{8}$"
+        }
+      },
+      "examples": [
+        {
+          "name": "getDate Example",
+          "params": [],
+          "result": {
+            "name": "date",
+            "value": "20231107"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getDateTime",
+      "summary": "Get current date and time",
+      "description": "Returns the panel's current date and time.",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "string",
+          "description": "The current date and time in the format YYYYMMDDHHMMSS.",
+          "pattern": "^\\d{14}$"
+        }
+      },
+      "examples": [
+        {
+          "name": "getDateTime Example",
+          "params": [],
+          "result": {
+            "name": "dateTime",
+            "value": "20231107224814"
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getDeviceConfig",
+      "summary": "Get device configuration",
+      "description": "Returns all configuration information for a device.",
+      "params": [
+        {
+          "name": "typeId",
+          "description": "PowerG Device type ID",
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "deviceId",
+          "description": "Device ID",
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "location": {
+              "type": "string"
+            },
+            "partitions": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "serial": {
+              "type": "string"
+            },
+            "subtype": {
+              "type": "integer"
+            },
+            "type": {
+              "type": "integer"
+            },
+            "zoneSecurityType": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "id",
+            "partitions",
+            "serial",
+            "subtype",
+            "type"
+          ]
+        }
+      },
+      "examples": [
+        {
+          "name": "getDeviceConfig Example",
+          "params": [
+            {
+              "name": "typeId",
+              "value": 3
+            },
+            {
+              "name": "deviceId",
+              "value": 3
+            }
+          ],
+          "result": {
+            "name": "device",
+            "value": {
+              "id": 3,
+              "location": "Utility room",
+              "partitions": [
+                1
+              ],
+              "serial": "000-0001",
+              "subtype": 12,
+              "type": 3,
+              "zoneSecurityType": 4
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getDeviceStatuses",
+      "summary": "Get device statuses",
+      "description": "Returns all status information for a device.",
+      "params": [
+        {
+          "name": "typeId",
+          "description": "PowerG Device type ID",
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "deviceId",
+          "description": "Device ID",
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "type": {
+              "type": "integer"
+            },
+            "statuses": {
+              "type": "object",
+              "properties": {
+                "acTrouble": {
+                  "type": "boolean"
+                },
+                "alarm": {
+                  "type": "boolean"
+                },
+                "bypassZone": {
+                  "type": "boolean"
+                },
+                "cleanMeTrouble": {
+                  "type": "boolean"
+                },
+                "coldAlert": {
+                  "type": "boolean"
+                },
+                "freezerAlert": {
+                  "type": "boolean"
+                },
+                "freezingAlert": {
+                  "type": "boolean"
+                },
+                "heatAlarmTrouble": {
+                  "type": "boolean"
+                },
+                "hotAlert": {
+                  "type": "boolean"
+                },
+                "lowBattery": {
+                  "type": "boolean"
+                },
+                "maskingTrouble": {
+                  "type": "boolean"
+                },
+                "notUpdated": {
+                  "type": "boolean"
+                },
+                "oneWayTrouble": {
+                  "type": "boolean"
+                },
+                "open": {
+                  "type": "boolean"
+                },
+                "smokeAlarm": {
+                  "type": "boolean"
+                },
+                "smokeTrouble": {
+                  "type": "boolean"
+                },
+                "supervisionTrouble": {
+                  "type": "boolean"
+                },
+                "tamperMemory": {
+                  "type": "boolean"
+                },
+                "tamperTrouble": {
+                  "type": "boolean"
+                },
+                "zoneTrouble": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "acTrouble",
+                "alarm",
+                "bypassZone",
+                "cleanMeTrouble",
+                "coldAlert",
+                "freezerAlert",
+                "freezingAlert",
+                "heatAlarmTrouble",
+                "hotAlert",
+                "lowBattery",
+                "maskingTrouble",
+                "notUpdated",
+                "oneWayTrouble",
+                "open",
+                "smokeAlarm",
+                "smokeTrouble",
+                "supervisionTrouble",
+                "tamperMemory",
+                "tamperTrouble",
+                "zoneTrouble"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "type",
+            "statuses"
+          ]
+        }
+      },
+      "examples": [
+        {
+          "name": "getDeviceStatuses Example",
+          "params": [
+            {
+              "name": "typeId",
+              "value": 3
+            },
+            {
+              "name": "deviceId",
+              "value": 3
+            }
+          ],
+          "result": {
+            "name": "status",
+            "value": {
+              "id": 3,
+              "statuses": {
+                "acTrouble": false,
+                "alarm": false,
+                "bypassZone": false,
+                "cleanMeTrouble": false,
+                "coldAlert": false,
+                "freezerAlert": false,
+                "freezingAlert": false,
+                "heatAlarmTrouble": false,
+                "hotAlert": false,
+                "lowBattery": false,
+                "maskingTrouble": false,
+                "notUpdated": false,
+                "oneWayTrouble": false,
+                "open": false,
+                "smokeAlarm": false,
+                "smokeTrouble": false,
+                "supervisionTrouble": false,
+                "tamperMemory": false,
+                "tamperTrouble": false,
+                "zoneTrouble": false
+              },
+              "type": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getDevicesConfig",
+      "summary": "Get all device configurations",
+      "description": "Returns all device information for the panel. This includes all sensors, keyfobs, etc.",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "location": {
+                "type": "string"
+              },
+              "partitions": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "serial": {
+                "type": "string"
+              },
+              "subtype": {
+                "type": "integer"
+              },
+              "type": {
+                "type": "integer"
+              },
+              "zoneSecurityType": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "id",
+              "partitions",
+              "serial",
+              "subtype",
+              "type"
+            ]
+          }
+        }
+      },
+      "examples": [
+        {
+          "name": "getDevicesConfig Example",
+          "params": [],
+          "result": {
+            "name": "devices",
+            "value": [
+              {
+                "id": 1,
+                "partitions": [
+                  1
+                ],
+                "serial": "410-0000",
+                "subtype": 1,
+                "type": 2
+              },
+              {
+                "id": 1,
+                "location": "Front door",
+                "partitions": [
+                  1
+                ],
+                "serial": "109-0000",
+                "subtype": 44,
+                "type": 3,
+                "zoneSecurityType": 5
+              },
+              {
+                "id": 2,
+                "location": "Kitchen",
+                "partitions": [
+                  1
+                ],
+                "serial": "126-0000",
+                "subtype": 12,
+                "type": 3,
+                "zoneSecurityType": 6
+              },
+              {
+                "id": 3,
+                "location": "Utility room",
+                "partitions": [
+                  1
+                ],
+                "serial": "126-0000",
+                "subtype": 12,
+                "type": 3,
+                "zoneSecurityType": 4
+              },
+              {
+                "id": 4,
+                "location": "Living room",
+                "partitions": [
+                  1
+                ],
+                "serial": "126-0000",
+                "subtype": 12,
+                "type": 3,
+                "zoneSecurityType": 6
+              },
+              {
+                "id": 1,
+                "partitions": [
+                  1
+                ],
+                "serial": "301-0000",
+                "subtype": 2,
+                "type": 5
+              },
+              {
+                "id": 2,
+                "partitions": [
+                  1
+                ],
+                "serial": "301-0000",
+                "subtype": 2,
+                "type": 5
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getEepromItem",
+      "summary": "Get EEPROM item",
+      "description": "Retrieves data from the panel's EEPROM. Exact semantics are based on reverse engineering and may vary by model.",
+      "params": [
+        {
+          "name": "startIndex",
+          "description": "Start index within the EEPROM to read from",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        {
+          "name": "maxIndex",
+          "description": "Maximum index or number of items to attempt to read (panel-dependent)",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        {
+          "name": "timeoutSeconds",
+          "description": "Timeout for the operation in seconds",
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "array",
+          "description": "EEPROM data bytes returned by the device (may be empty if no data)",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+          }
+        }
+      },
+      "examples": [
+        {
+          "name": "getEepromItem Example",
+          "params": [
+            {
+              "name": "startIndex",
+              "value": 1
+            },
+            {
+              "name": "maxIndex",
+              "value": 1
+            },
+            {
+              "name": "timeoutSeconds",
+              "value": 1
+            }
+          ],
+          "result": {
+            "name": "eepromData",
+            "value": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getEepromVersion",
+      "summary": "Get EEPROM version",
+      "description": "Returns the EEPROM version of the panel.",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "eeprom_model": {
+              "type": "integer"
+            },
+            "eeprom_sub_model": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "eeprom_model",
+            "eeprom_sub_model"
+          ]
+        }
+      },
+      "examples": [
+        {
+          "name": "getEepromVersion Example",
+          "params": [],
+          "result": {
+            "name": "version",
+            "value": {
+              "eeprom_model": 7,
+              "eeprom_sub_model": 174
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getLocation",
+      "summary": "Get a location by ID",
+      "description": "Returns information for a zone location.",
+      "params": [
+        {
+          "name": "locationId",
+          "description": "Location ID",
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "value"
+          ]
+        }
+      },
+      "examples": [
+        {
+          "name": "getLocation Example",
+          "params": [
+            {
+              "name": "locationId",
+              "value": 1
+            }
+          ],
+          "result": {
+            "name": "location",
+            "value": {
+              "id": 1,
+              "value": "Loft"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getLocationsList",
+      "summary": "Get list of locations",
+      "description": "Returns a full list of locations on the panel.",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "value"
+            ]
+          }
+        }
+      },
+      "examples": [
+        {
+          "name": "getLocationsList Example",
+          "params": [],
+          "result": {
+            "name": "locations",
+            "value": [
+              {
+                "id": 1,
+                "value": "Loft"
+              },
+              {
+                "id": 2,
+                "value": "Back door"
+              },
+              {
+                "id": 3,
+                "value": "Cellar"
+              },
+              {
+                "id": 4,
+                "value": "Bathroom"
+              },
+              {
+                "id": 5,
+                "value": "Bedroom"
+              },
+              {
+                "id": 6,
+                "value": "Child room"
+              },
+              {
+                "id": 7,
+                "value": "Conservatory"
+              },
+              {
+                "id": 8,
+                "value": "Play room"
+              },
+              {
+                "id": 9,
+                "value": "Dining room"
+              },
+              {
+                "id": 10,
+                "value": "Downstairs"
+              },
+              {
+                "id": 11,
+                "value": "Emergency"
+              },
+              {
+                "id": 12,
+                "value": "Fire"
+              },
+              {
+                "id": 13,
+                "value": "Front door"
+              },
+              {
+                "id": 14,
+                "value": "Garage"
+              },
+              {
+                "id": 15,
+                "value": "Garage door"
+              },
+              {
+                "id": 16,
+                "value": "Office"
+              },
+              {
+                "id": 17,
+                "value": "Hall"
+              },
+              {
+                "id": 18,
+                "value": "Kitchen"
+              },
+              {
+                "id": 19,
+                "value": "Laundry room"
+              },
+              {
+                "id": 20,
+                "value": "Living room"
+              },
+              {
+                "id": 21,
+                "value": "Master bath"
+              },
+              {
+                "id": 22,
+                "value": "Master Bdrm"
+              },
+              {
+                "id": 23,
+                "value": "Study"
+              },
+              {
+                "id": 24,
+                "value": "Upstairs"
+              },
+              {
+                "id": 25,
+                "value": "Utility room"
+              },
+              {
+                "id": 26,
+                "value": "Garden"
+              },
+              {
+                "id": 27,
+                "value": "Custom 1"
+              },
+              {
+                "id": 28,
+                "value": "Custom 2"
+              },
+              {
+                "id": 29,
+                "value": "Custom 3"
+              },
+              {
+                "id": 30,
+                "value": "Custom 4"
+              },
+              {
+                "id": 31,
+                "value": "Custom 5"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getMaxDevice",
+      "summary": "Get max devices for a type",
+      "description": "Returns the maximum number of devices for a particular device type that can be added to the system.",
+      "params": [
+        {
+          "name": "typeId",
+          "description": "PowerG Device type ID",
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "max": {
+              "type": "integer"
+            },
+            "type": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "max",
+            "type"
+          ]
+        }
+      },
+      "examples": [
+        {
+          "name": "getMaxDevice Example",
+          "params": [
+            {
+              "name": "typeId",
+              "value": 3
+            }
+          ],
+          "result": {
+            "name": "maxForType",
+            "value": {
+              "max": 30,
+              "type": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getMaxDevices",
+      "summary": "Get max devices per type",
+      "description": "Returns the maximum number of devices per type that can be added to the system.",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "max": {
+                "type": "integer"
+              },
+              "type": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "max",
+              "type"
+            ]
+          }
+        }
+      },
+      "examples": [
+        {
+          "name": "getMaxDevices Example",
+          "params": [],
+          "result": {
+            "name": "maxDevices",
+            "value": [
+              {
+                "max": 4,
+                "type": 0
+              },
+              {
+                "max": 15,
+                "type": 1
+              },
+              {
+                "max": 4,
+                "type": 2
+              },
+              {
+                "max": 30,
+                "type": 3
+              },
+              {
+                "max": 8,
+                "type": 4
+              },
+              {
+                "max": 8,
+                "type": 5
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getPanelConfig",
+      "summary": "Get panel configuration",
+      "description": "Returns all configuration information for the panel.",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "abortTime": {
+              "type": "integer"
+            },
+            "bypassArmMode": {
+              "type": "string"
+            },
+            "duressCode": {
+              "type": "string"
+            },
+            "eepromVersion": {
+              "type": "object",
+              "properties": {
+                "eeprom_model": {
+                  "type": "integer"
+                },
+                "eeprom_sub_model": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "eeprom_model",
+                "eeprom_sub_model"
+              ]
+            },
+            "entryDelay1": {
+              "type": "integer"
+            },
+            "entryDelay2": {
+              "type": "integer"
+            },
+            "exitDelay": {
+              "type": "integer"
+            },
+            "gprsEnrolled": {
+              "type": "boolean"
+            },
+            "kidsComeHomeEnabled": {
+              "type": "boolean"
+            },
+            "latchkeyEnabled": {
+              "type": "boolean"
+            },
+            "panelId": {
+              "type": "string"
+            },
+            "partitionEnabled": {
+              "type": "boolean"
+            },
+            "plinkVariant": {
+              "type": "string"
+            },
+            "plinkVersion": {
+              "type": "string"
+            },
+            "pmaxDefaultVersion": {
+              "type": "string"
+            },
+            "pmaxVersion": {
+              "type": "string"
+            },
+            "quickArmEnabled": {
+              "type": "boolean"
+            },
+            "viewOnDemand": {
+              "type": "string"
+            },
+            "viewOnDemandTimeWindow": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "abortTime",
+            "bypassArmMode",
+            "duressCode",
+            "eepromVersion",
+            "entryDelay1",
+            "entryDelay2",
+            "exitDelay",
+            "gprsEnrolled",
+            "kidsComeHomeEnabled",
+            "latchkeyEnabled",
+            "panelId",
+            "partitionEnabled",
+            "plinkVariant",
+            "plinkVersion",
+            "pmaxDefaultVersion",
+            "pmaxVersion",
+            "quickArmEnabled",
+            "viewOnDemand",
+            "viewOnDemandTimeWindow"
+          ]
+        }
+      },
+      "examples": [
+        {
+          "name": "getPanelConfig Example",
+          "params": [],
+          "result": {
+            "name": "panelConfig",
+            "value": {
+              "abortTime": 1,
+              "bypassArmMode": "MANUAL_BYPASS",
+              "duressCode": "0000",
+              "eepromVersion": {
+                "eeprom_model": 7,
+                "eeprom_sub_model": 174
+              },
+              "entryDelay1": 30,
+              "entryDelay2": 60,
+              "exitDelay": 30,
+              "gprsEnrolled": false,
+              "kidsComeHomeEnabled": false,
+              "latchkeyEnabled": true,
+              "panelId": "0AAA0A",
+              "partitionEnabled": false,
+              "plinkVariant": "adtuk",
+              "plinkVersion": "7.5.58",
+              "pmaxDefaultVersion": "J-703883 I20.214",
+              "pmaxVersion": "JS703642 I20.214",
+              "quickArmEnabled": false,
+              "viewOnDemand": "VIEW_IN_ALL_MODES",
+              "viewOnDemandTimeWindow": "ALWAYS"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getPanelState",
+      "summary": "Get panel state for a partition",
+      "description": "Returns information on the panel's state for a particular partition.",
+      "params": [
+        {
+          "name": "partitionId",
+          "description": "Partition ID",
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "partition": {
+              "type": "integer"
+            },
+            "state": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "partition",
+            "state"
+          ]
+        }
+      },
+      "examples": [
+        {
+          "name": "getPanelState Example",
+          "params": [
+            {
+              "name": "partitionId",
+              "value": 1
+            }
+          ],
+          "result": {
+            "name": "panelState",
+            "value": {
+              "partition": 1,
+              "state": "DISARM"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getPanelStatuses",
+      "summary": "Get panel statuses and partitions",
+      "description": "Returns information on partitions and the panel's current status.",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "datetime": {
+              "type": "string",
+              "description": "YYYYMMDDHHMMSS",
+              "pattern": "^\\d{14}$"
+            },
+            "partitions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "partition": {
+                    "type": "integer"
+                  },
+                  "state": {
+                    "type": "string"
+                  },
+                  "statuses": {
+                    "type": "object",
+                    "properties": {
+                      "activeBit": {
+                        "type": "boolean"
+                      },
+                      "alertBit": {
+                        "type": "boolean"
+                      },
+                      "bypassBit": {
+                        "type": "boolean"
+                      },
+                      "fireBit": {
+                        "type": "boolean"
+                      },
+                      "instantBit": {
+                        "type": "boolean"
+                      },
+                      "latchkeyBit": {
+                        "type": "boolean"
+                      },
+                      "memoryBit": {
+                        "type": "boolean"
+                      },
+                      "needEngResetBit": {
+                        "type": "boolean"
+                      },
+                      "readyBit": {
+                        "type": "boolean"
+                      },
+                      "troubleBit": {
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "activeBit",
+                      "alertBit",
+                      "bypassBit",
+                      "fireBit",
+                      "instantBit",
+                      "latchkeyBit",
+                      "memoryBit",
+                      "needEngResetBit",
+                      "readyBit",
+                      "troubleBit"
+                    ]
+                  }
+                },
+                "required": [
+                  "partition",
+                  "state",
+                  "statuses"
+                ]
+              }
+            },
+            "statuses": {
+              "type": "object",
+              "properties": {
+                "acTrouble": {
+                  "type": "boolean"
+                },
+                "communicationFailure": {
+                  "type": "boolean"
+                },
+                "enrollingModeBit": {
+                  "type": "boolean"
+                },
+                "fuseTrouble": {
+                  "type": "boolean"
+                },
+                "jammingTrouble": {
+                  "type": "boolean"
+                },
+                "lineFailure": {
+                  "type": "boolean"
+                },
+                "lowBattery": {
+                  "type": "boolean"
+                },
+                "noActive": {
+                  "type": "boolean"
+                },
+                "tamperMemory": {
+                  "type": "boolean"
+                },
+                "tamperTrouble": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "acTrouble",
+                "communicationFailure",
+                "enrollingModeBit",
+                "fuseTrouble",
+                "jammingTrouble",
+                "lineFailure",
+                "lowBattery",
+                "noActive",
+                "tamperMemory",
+                "tamperTrouble"
+              ]
+            }
+          },
+          "required": [
+            "datetime",
+            "partitions",
+            "statuses"
+          ]
+        }
+      },
+      "examples": [
+        {
+          "name": "getPanelStatuses Example",
+          "params": [],
+          "result": {
+            "name": "panelStatuses",
+            "value": {
+              "datetime": "20231107225917",
+              "partitions": [
+                {
+                  "partition": 1,
+                  "state": "DISARM",
+                  "statuses": {
+                    "activeBit": true,
+                    "alertBit": false,
+                    "bypassBit": false,
+                    "fireBit": false,
+                    "instantBit": false,
+                    "latchkeyBit": false,
+                    "memoryBit": false,
+                    "needEngResetBit": false,
+                    "readyBit": true,
+                    "troubleBit": false
+                  }
+                }
+              ],
+              "statuses": {
+                "acTrouble": false,
+                "communicationFailure": false,
+                "enrollingModeBit": false,
+                "fuseTrouble": false,
+                "jammingTrouble": false,
+                "lineFailure": false,
+                "lowBattery": false,
+                "noActive": false,
+                "tamperMemory": false,
+                "tamperTrouble": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getUserCode",
+      "summary": "Get codes for a specific user",
+      "description": "Returns all the user codes for a particular user.",
+      "params": [
+        {
+          "name": "code",
+          "description": "Your user code you use to arm + disarm the panel",
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "userId",
+          "description": "The user ID you want to get the codes for",
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "partitions": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "userCode": {
+              "type": "string"
+            },
+            "userId": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "partitions",
+            "userCode",
+            "userId"
+          ]
+        }
+      },
+      "examples": [
+        {
+          "name": "getUserCode Example",
+          "params": [
+            {
+              "name": "code",
+              "value": "1234"
+            },
+            {
+              "name": "userId",
+              "value": 1
+            }
+          ],
+          "result": {
+            "name": "userCodeInfo",
+            "value": {
+              "partitions": [
+                1,
+                2,
+                3
+              ],
+              "userCode": "1234",
+              "userId": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/getUserCodes",
+      "summary": "Get all user codes",
+      "description": "Returns all the user codes for the panel.",
+      "params": [
+        {
+          "name": "code",
+          "description": "Your user code you use to arm + disarm the panel",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "partitions": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "userCode": {
+                "type": "string"
+              },
+              "userId": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "partitions",
+              "userCode",
+              "userId"
+            ]
+          }
+        }
+      },
+      "examples": [
+        {
+          "name": "getUserCodes Example",
+          "params": [
+            {
+              "name": "code",
+              "value": "1234"
+            }
+          ],
+          "result": {
+            "name": "userCodes",
+            "value": [
+              {
+                "partitions": [
+                  1,
+                  2,
+                  3
+                ],
+                "userCode": "1234",
+                "userId": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/isPanelConnected",
+      "summary": "Is panel connected",
+      "description": "Returns the panel's current connection status.",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "boolean",
+          "description": "True if the panel is currently connected"
+        }
+      },
+      "examples": [
+        {
+          "name": "isPanelConnected Example",
+          "params": [],
+          "result": {
+            "name": "connected",
+            "value": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/registerClient",
+      "summary": "Register a client",
+      "description": "Registers a client by IP address. Only one client can be active at a time.",
+      "params": [
+        {
+          "name": "clientIp",
+          "description": "IP address of the client",
+          "schema": {
+            "type": "string",
+            "format": "ipv4"
+          }
+        },
+        {
+          "name": "code",
+          "description": "Possibly the master/user/installer code",
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "role",
+          "description": "Unknown parameter — 'user' seems to work",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "success"
+              ]
+            }
+          },
+          "required": [
+            "status"
+          ]
+        }
+      },
+      "examples": [
+        {
+          "name": "registerClient Example",
+          "params": [
+            {
+              "name": "clientIp",
+              "value": "192.168.1.1"
+            },
+            {
+              "name": "code",
+              "value": 1234
+            },
+            {
+              "name": "role",
+              "value": "user"
+            }
+          ],
+          "result": {
+            "name": "status",
+            "value": {
+              "status": "success"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/setDebugMode",
+      "summary": "Set debug mode",
+      "description": "Enables or disables the debug mode of the panel. Note: This is not supported on some panels.",
+      "params": [
+        {
+          "name": "installerCode",
+          "description": "Your installer code",
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "enable",
+          "description": "Debug mode true/false",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "success"
+              ]
+            }
+          },
+          "required": [
+            "status"
+          ]
+        }
+      },
+      "examples": [
+        {
+          "name": "setDebugMode Example",
+          "params": [
+            {
+              "name": "installerCode",
+              "value": 1234
+            },
+            {
+              "name": "enable",
+              "value": true
+            }
+          ],
+          "result": {
+            "name": "status",
+            "value": {
+              "status": "success"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PmaxService/setPanelState",
+      "summary": "Set panel state",
+      "description": "Sets the state of the panel. For example, to arm/disarm your panel, use this method.",
+      "params": [
+        {
+          "name": "code",
+          "description": "Your user code you use to arm + disarm the panel",
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "state",
+          "description": "The state you want to set your panel",
+          "schema": {
+            "type": "string",
+            "enum": [
+              "AWAY",
+              "HOME",
+              "DISARM"
+            ]
+          }
+        },
+        {
+          "name": "partition",
+          "description": "The partition you want to set the state of (Requires clarification)",
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "unknown1",
+          "description": "Unknown (Requires clarification)",
+          "schema": {
+            "type": "boolean"
+          }
+        },
+        {
+          "name": "unknown2",
+          "description": "Unknown (Requires clarification)",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": [
+                "success"
+              ]
+            }
+          },
+          "required": [
+            "status"
+          ]
+        }
+      },
+      "examples": [
+        {
+          "name": "setPanelState Example",
+          "params": [
+            {
+              "name": "code",
+              "value": 1234
+            },
+            {
+              "name": "state",
+              "value": "HOME"
+            },
+            {
+              "name": "partition",
+              "value": 1
+            },
+            {
+              "name": "unknown1",
+              "value": true
+            },
+            {
+              "name": "unknown2",
+              "value": true
+            }
+          ],
+          "result": {
+            "name": "status",
+            "value": {
+              "status": "success"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
