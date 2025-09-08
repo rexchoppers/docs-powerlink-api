@@ -67,15 +67,6 @@
     "returns": []
   },
   {
-    "method": "PmaxService/getPanelState",
-    "params": [
-      1
-    ],
-    "returns": {
-      "objectkey": "objectvalue"
-    }
-  },
-  {
     "method": "PmaxService/getPowerGDeviceProperty",
     "params": [
       1,
